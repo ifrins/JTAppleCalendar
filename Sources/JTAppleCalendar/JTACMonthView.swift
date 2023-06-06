@@ -64,7 +64,10 @@ open class JTACMonthView: UICollectionView {
     /// refreshing of the date-cells both left and right of the cell you
     /// just selected.
     @available(*, unavailable, renamed: "allowsRangedSelection")
-    open var isRangeSelectionUsed: Bool = false
+    open var isRangeSelectionUsed: Bool {
+      get { return allowsRangedSelection }
+      set { allowsRangedSelection = newValue }
+    }
     open var allowsRangedSelection: Bool = false
   
     open var rangeSelectionMode: RangeSelectionMode = .segmented
